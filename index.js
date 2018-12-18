@@ -31,7 +31,7 @@ BluetoothSerial.write = (data) => {
   if (typeof data === 'string') {
     data = new Buffer(data)
   }
-  return BluetoothSerial.writeToDevice(data.toString('base64'))
+  return BluetoothSerial.writeToDevice(btoa(String.fromCharCode(...new Uint8Array(data))))
 }
 
 module.exports = BluetoothSerial
