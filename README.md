@@ -1,13 +1,13 @@
 ## React Native Bluetooth Serial
 
 React Native version of [BluetoothSerial](https://github.com/don/BluetoothSerial) plugin. For both
-android and ios
+android and ios (not tested)
 
 ## Compatibility
 Officialy this library supports React Native >= 0.25, it may run on older versions but no guarantees.
 
 ## Installation
-1. Install package via npm: `npm i -S react-native-bluetooth-serial`
+1. Install package via npm: `npm i -S github:iiqmohamad/react-native-bluetooth-serial`
 2. Link libraries with: `rnpm link` or `react-native link` for React Native >= 0.27
 3. For android you also need to put following code to `AndroidManifest.xml`
 ```
@@ -26,7 +26,7 @@ Officialy this library supports React Native >= 0.25, it may run on older versio
 
 
 #### Android
-1. `npm i -S react-native-bluetooth-serial`
+1. `npm i -S github:iiqmohamad/react-native-bluetooth-serial`
 2. Open up `android/app/src/main/java/[...]/MainActivity.java` or `MainApplication.java` for React Native >= 0.29
   - Add `import com.rusel.RCTBluetoothSerial.*;` to the imports at the top of the file
   - Add `new RCTBluetoothSerialPackage()` to the list returned by the `getPackages()` method
@@ -37,16 +37,8 @@ Officialy this library supports React Native >= 0.25, it may run on older versio
     ```
 4. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
     ```
-    compile project(':react-native-bluetooth-serial')
+    implementation project(':react-native-bluetooth-serial')
     ```
-
-## Example
-As bluetooth is not available in any simulators, if you want to test it with some bluetooth peripherals you have
-to run the example on actual device.
-1. `git clone https://github.com/rusel1989/react-native-bluetooth-serial.git`
-2. `cd react-native-bluetooth-serial/BluetoothSerialExample`
-3. `npm i`
-4. `react-native run-ios/run-android`
 
 # Reading and writing
 In Android after you connect to peripheral `write` and `read` methods should work for most of devices out of the box.

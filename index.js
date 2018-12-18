@@ -1,3 +1,5 @@
+import Base64 from './Base64'
+
 const ReactNative = require('react-native')
 const { Buffer } = require('buffer')
 const { NativeModules, DeviceEventEmitter } = ReactNative
@@ -31,7 +33,7 @@ BluetoothSerial.write = (data) => {
   if (typeof data === 'string') {
     data = new Buffer(data)
   }
-  return BluetoothSerial.writeToDevice(btoa(String.fromCharCode(...new Uint8Array(data))))
+  return BluetoothSerial.writeToDevice(Base64.btoa(String.fromCharCode(...new Uint8Array(data))))
 }
 
 module.exports = BluetoothSerial
