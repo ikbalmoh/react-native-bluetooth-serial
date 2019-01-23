@@ -3,7 +3,7 @@
 
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 const Base64 = {
-  btoa: (input = '')  => {
+  btoa: (input:string = '')  => {
     let str = input;
     let output = '';
 
@@ -23,7 +23,7 @@ const Base64 = {
     return output;
   },
 
-  atob: (input = '') => {
+  atob: (input:string = '') => {
     let str = input.replace(/=+$/, '');
     let output = '';
 
